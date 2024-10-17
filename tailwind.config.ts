@@ -22,6 +22,11 @@ const config: Config = {
         "neutral-20": "#CCD1D2",
         "neutral-10": "#EBEEEF",
         "neutral-00": "#FDFDFD",
+
+        "btn-primary-1" : "#002A48",
+        "btn-primary-2" : "#003459",
+        "btn-secondary-1" : "#00528C",
+        "btn-secondary-2" : "#0078CD",
       },
       fontFamily: {
         "Gilroy-Bold": ["Gilroy-Bold", "sans-serif"],
