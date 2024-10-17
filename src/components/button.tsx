@@ -1,13 +1,13 @@
 import React from 'react';
-import { LuChevronRightCircle } from 'react-icons/lu';
 
 interface ButtonProps {
     text?: string;
     type?: 'default' | 'iconRight' | 'iconLeft' | 'iconOnly';
     color?: "primary1" | "secondary1" | "primary2" | "secondary2" | "disabled" | "outlined";
+    icon?: React.ReactNode;
 }
 
-const Button: React.FC<ButtonProps> = ({ text = '', type = 'default', color = 'primary1' }) => {
+const Button: React.FC<ButtonProps> = ({ text = '', type = 'default', color = 'primary1', icon }) => {
     const getButtonClasses = () => {
         switch (color) {
             case 'primary1':
@@ -28,10 +28,9 @@ const Button: React.FC<ButtonProps> = ({ text = '', type = 'default', color = 'p
     };
 
     return (
-        <button className={`${getButtonClasses()} ${type === 'iconOnly' ? 'p-4' : 'px-4 py-2'} rounded-full flex items-center justify-center gap-2`}>
-            {(type === 'iconLeft' || type === 'iconOnly') && <LuChevronRightCircle className='text-2xl' />}
+        <button className={`${getButtonClasses()} ${type === 'iconOnly' ? 'p-4' : 'px-4 py-2'} rounded-full flex items-center justify-center gap-2 ${type === 'iconRight' ? 'flex-row' : 'flex-row-reverse '}`}>
+            {type !== 'default' && icon}
             {type !== 'iconOnly' && text}
-            {type === 'iconRight' && <LuChevronRightCircle className='text-2xl' />}
         </button>
     );
 };
