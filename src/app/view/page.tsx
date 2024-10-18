@@ -14,15 +14,30 @@ import Navbar from "@/components/navbar";
 
 const Page = () => {
 
+    interface CustomerReview {
+        name: string;
+        pet: string;
+        image: string;
+    }
+
     const [pets, setPets] = useState([]);
+    const [customerReviews, setCustomerReviews] = useState<CustomerReview[]>([]);
 
     const fetchPets = async () => {
         const res = await fetch("https://monitor-backend-rust.vercel.app/api/pets");
         const data = await res.json();
         setPets(data);
     }
+
+    const fetchCustomerReviews = async () => {
+        const res = await fetch("https://monitor-backend-rust.vercel.app/api/customers");
+        const data = await res.json();
+        setCustomerReviews(data);
+    }
+
     useEffect(() => {
         fetchPets();
+        fetchCustomerReviews();
     }, []);
 
     const carouselImages = [
@@ -230,9 +245,9 @@ const Page = () => {
                             {...slickSettings}
                             className="w-full mt-5"
                         >
-                            {carouselImages.map((img, index) => (
+                            {customerReviews.map((review, index) => (
                                 <div className="px-3" key={index}>
-                                    <Image src={img} alt="hero" width={600} height={600} className="object-cover w-full h-full max-h-[476px]" />
+                                    <Image src={review.image} alt={review.pet} width={600} height={600} className="object-cover w-full h-full max-h-[476px]" />
                                 </div>
                             ))}
                         </SlickSlider>
