@@ -68,7 +68,7 @@ const Page = () => {
             <Navbar />
 
             {/* Header section */}
-            <div className="w-full flex flex-col lg:flex-row gap-5 gap-x-10 mt-20 border border-gray-100 xl:p-5 rounded-2xl">
+            <div className="w-full flex flex-col lg:flex-row gap-5 gap-x-10 mt-20 border-y border-gray-100 md:border py-5 md:p-5 md:rounded-2xl md:max-w-[1200px] mx-auto">
                 {/* Left side Image Carousel */}
                 <div className="w-full lg:w-1/2">
                     <CarouselProvider
@@ -82,10 +82,10 @@ const Page = () => {
                         dragEnabled
                         isIntrinsicHeight
                     >
-                        <Slider className="xl:rounded-2xl overflow-clip">
+                        <Slider className="md:rounded-2xl overflow-clip">
                             {carouselImages.map((img, index) => (
-                                <Slide index={index} key={index} className="flex justify-center items-center w-full h-full max-h-[523px] xl:max-h-[476px]">
-                                    <Image src={img} alt="hero" width={1000} height={600} className="object-cover w-full h-full max-h-[523px] xl:max-h-[476px]" radius="none" />
+                                <Slide index={index} key={index} className="flex justify-center items-center w-full h-full max-h-[523px] md:max-h-[476px]">
+                                    <Image src={img} alt="hero" width={1000} height={600} className="object-cover w-full h-full max-h-[523px] md:max-h-[476px]" radius="none" />
                                 </Slide>
                             ))}
                         </Slider>
@@ -99,33 +99,37 @@ const Page = () => {
                         </DotGroup>
                     </CarouselProvider>
 
-                    <div className="w-full rounded-2xl bg-secondary bg-opacity-40 p-4 flex justify-between text-sm mt-6">
-                        <div className="flex gap-x-[9px]">
-                            <Image src="/icons/dogHeart.svg" alt="dog and cat" width={24} height={24} />
-                            <span className="text-primary font-semibold">100% health guarantee for pets</span>
-                        </div>
-                        <div className="flex gap-x-[9px]">
-                            <Image src="/icons/dogAndCat.svg" alt="dog and cat" width={24} height={24} />
-                            <span className="text-primary font-semibold">100% guarantee of pet identification</span>
+                    <div className="px-4 xl:p-0">
+                        <div className="w-full rounded-2xl bg-secondary bg-opacity-40 p-4 flex flex-col md:flex-row justify-between text-sm mt-6 gap-y-3 md:gap-y-0">
+                            <div className="flex gap-x-[9px]">
+                                <Image src="/icons/dogHeart.svg" alt="dog and cat" width={24} height={24} />
+                                <span className="text-primary font-semibold">100% health guarantee for pets</span>
+                            </div>
+                            <div className="flex gap-x-[9px]">
+                                <Image src="/icons/dogAndCat.svg" alt="dog and cat" width={24} height={24} />
+                                <span className="text-primary font-semibold">100% guarantee of pet identification</span>
+                            </div>
                         </div>
                     </div>
 
-                    <div className="w-full flex text-sm mt-6 text-primary gap-x-5 px-4">
-                        <p className="flex gap-x-2 font-bold">
-                            <BsShare className="w-[18.77px] h-[18.77px]" /> Share:
-                        </p>
-                        <a href="#" className="text-gray-400" target="_blank">
-                            <BsFacebook className="w-[18.77px] h-[18.77px]" />
-                        </a>
-                        <a href="#" className="text-gray-400" target="_blank">
-                            <BsTwitter className="w-[18.77px] h-[18.77px]" />
-                        </a>
-                        <a href="#" className="text-gray-400" target="_blank">
-                            <BsInstagram className="w-[18.77px] h-[18.77px]" />
-                        </a>
-                        <a href="#" className="text-gray-400" target="_blank">
-                            <BsYoutube className="w-[18.77px] h-[18.77px]" />
-                        </a>
+                    <div className="px-4 xl:p-0">
+                        <div className="w-full flex text-sm mt-6 text-primary gap-x-5">
+                            <p className="flex gap-x-2 font-bold">
+                                <BsShare className="w-[18.77px] h-[18.77px]" /> Share:
+                            </p>
+                            <a href="#" className="text-gray-400" target="_blank">
+                                <BsFacebook className="w-[18.77px] h-[18.77px]" />
+                            </a>
+                            <a href="#" className="text-gray-400" target="_blank">
+                                <BsTwitter className="w-[18.77px] h-[18.77px]" />
+                            </a>
+                            <a href="#" className="text-gray-400" target="_blank">
+                                <BsInstagram className="w-[18.77px] h-[18.77px]" />
+                            </a>
+                            <a href="#" className="text-gray-400" target="_blank">
+                                <BsYoutube className="w-[18.77px] h-[18.77px]" />
+                            </a>
+                        </div>
                     </div>
                 </div>
 
