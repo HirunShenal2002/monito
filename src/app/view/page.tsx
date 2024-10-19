@@ -80,7 +80,7 @@ const Page = () => {
     };
     return (
         <>
-            <Navbar />
+            <Navbar/>
 
             {/* Header section */}
             <div className="w-full flex flex-col lg:flex-row gap-5 gap-x-10 mt-20 border-y border-gray-100 md:border py-5 md:p-5 md:rounded-2xl md:max-w-[1200px] mx-auto">
