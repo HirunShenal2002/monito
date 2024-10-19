@@ -62,7 +62,7 @@ export default function Home() {
             </div>
             <div className="w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
               {pets.map((pet, index) => (
-                <ProductCard key={index} product={pet} />
+                <ProductCard key={index} product={pet} isPetsCard={true}/>
               ))}
             </div>
           </div>
