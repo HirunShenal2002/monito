@@ -2,12 +2,13 @@
 import Button from "@/components/button";
 import Footer from "@/components/footer";
 import ProductCard from "@/components/productCard";
-import { Image } from "@nextui-org/react";
+import { Chip, Image } from "@nextui-org/react";
 import { useEffect, useState } from "react";
 import { BsChevronRight, BsPlayCircle } from "react-icons/bs";
 import { IoIosPlayCircle } from "react-icons/io";
 import Navbar from "@/components/navbar";
 import Marquee from "react-fast-marquee";
+import { img } from "framer-motion/client";
 
 export default function Home() {
 
@@ -29,6 +30,24 @@ export default function Home() {
     fetchProducts();
   }, []);
 
+  const blogPosts = [
+    {
+      img: "/imgs/blogImg1.png",
+      title: "What is a Pomeranian? How to Identify Pomeranian Dogs",
+      description: "The Pomeranian, also known as the Pomeranian (Pom dog), is always in the top of the cutest pets. Not only that, the small, lovely, smart, friendly, and skillful circus dog breed.",
+      tag: "Pet knowledge",
+    }, {
+      img: "/imgs/blogImg2.png",
+      title: "Dog Diet You Need To Know",
+      description: "Dividing a dog's diet may seem simple at first, but there are some rules you should know so that your dog can easily absorb the nutrients in the diet. For those who are just starting to raise dogs, especially newborn puppies with relatively weak resistance.",
+      tag: "Pet knowledge",
+    }, {
+      img: "/imgs/blogImg3.png",
+      title: "Why Dogs Bite and Destroy Furniture and How to Prevent It Effectively",
+      description: "Dog bites are common during development. However, no one wants to see their furniture or important items being bitten by a dog.",
+      tag: "Pet knowledge",
+    },
+  ];
 
   return (
     <>
@@ -95,7 +114,6 @@ export default function Home() {
           </div>
         </div>
 
-
         <div className="hidden lg:flex gap-y-10 flex-col my-20">
 
           <div className="flex justify-between">
@@ -118,6 +136,19 @@ export default function Home() {
           </Marquee>
 
           <Banner bannerImage="/imgs/homeBanner2.png" title="Adoption" subtitle="We need help. so do they." description="Adopt a pet and give it a home,it will be love you back unconditionally." button1="View Into" button2="Explore Now" colour1="#FFB775" colour2="#FCEED5" colour3="#FFE7BA" isImageLeft={false} />
+        </div>
+
+        <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+          {blogPosts.map((post, index) => (
+            <div key={index} className="flex flex-col gap-y-3 p-5">
+              <Image className="w-full h-[250px] object-cover" width={1000} height={250} src={post.img} alt={post.title} />
+              <Chip className="bg-[#00A7E7] text-white">
+                {post.tag}
+              </Chip>
+              <h4 className="text-2xl font-bold">{post.title}</h4>
+              <p>{post.description}</p>
+            </div>
+          ))}
         </div>
 
       </div >
