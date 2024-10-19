@@ -1,10 +1,11 @@
 "use client";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Dialog, DialogBackdrop, DialogPanel, DialogTitle, TransitionChild } from '@headlessui/react'
 import { BsFilter, BsFunnel, BsXLg } from "react-icons/bs";
 import { Autocomplete, AutocompleteItem, Button, Checkbox, Divider, Input, Pagination } from "@nextui-org/react";
 import ProductCard from "@/components/productCard";
 import Footer from "@/components/footer";
+import Navbar from "@/components/navbar";
 
 const Page = () => {
 
@@ -30,6 +31,7 @@ const Page = () => {
 
     return (
         <>
+            <Navbar/>
 
             {/* Slider for small screens */}
             <Dialog open={sideDrawer} onClose={setSideDrawer} className="relative z-10 lg:hidden">

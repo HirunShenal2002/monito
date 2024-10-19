@@ -5,6 +5,7 @@ import ProductCard from "@/components/productCard";
 import { useEffect, useState } from "react";
 import { BsChevronRight } from "react-icons/bs";
 import { IoIosPlayCircle } from "react-icons/io";
+import Navbar from "@/components/navbar";
 
 export default function Home() {
 
@@ -26,8 +27,12 @@ export default function Home() {
     fetchProducts();
   }, []);
 
+
   return (
     <>
+
+      <Navbar />
+
       {/* hero section */}
       <section className="bg-secondary bg-opacity-50 lg:max-h-[695px] lg:h-screen lg:flex items-center justify-center overflow-clip">
         <div className=" p-10 sm:p-20">
@@ -58,7 +63,7 @@ export default function Home() {
                 <small>Whats new?</small>
                 <p className="font-bold text-lg">Take a look at some of our pets</p>
               </div>
-              <Button text="View more" icon={<BsChevronRight className="w-[15px] h-[15px]" />} type="iconLeft" color="outlined" />
+              <Button text="View more" icon={<BsChevronRight className="w-[15px] h-[15px]" />} type="iconLeft" color="outlined"  />
             </div>
             <div className="w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
               {pets.map((pet, index) => (
