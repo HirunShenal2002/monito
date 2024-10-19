@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import { BsChevronRight, BsPlayCircle } from "react-icons/bs";
 import { IoIosPlayCircle } from "react-icons/io";
 import Navbar from "@/components/navbar";
+import Marquee from "react-fast-marquee";
 
 export default function Home() {
 
@@ -64,7 +65,7 @@ export default function Home() {
                 <small>Whats new?</small>
                 <p className="font-bold text-lg">Take a look at some of our pets</p>
               </div>
-              <Button text="View more" icon={<BsChevronRight className="w-[15px] h-[15px]" />} type="iconLeft" color="outlined"  />
+              <Button text="View more" icon={<BsChevronRight className="w-[15px] h-[15px]" />} type="iconLeft" color="outlined" />
             </div>
             <div className="w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
               {pets.map((pet, index) => (
@@ -94,10 +95,32 @@ export default function Home() {
           </div>
         </div>
 
-        <Banner bannerImage="/imgs/homeBanner2.png" title="Adoption" subtitle="We need help. so do they." description="Adopt a pet and give it a home,
-it will be love you back unconditionally." button1="View Into" button2="Explore Now" colour1="#FFB775" colour2="#FCEED5" colour3="#FFE7BA" isImageLeft={false} />
 
-      </div>
+        <div className="hidden lg:flex gap-y-10 flex-col my-20">
+
+          <div className="flex justify-between">
+            <div className="flex items-baseline gap-x-3">
+              <small>Proud to be part of</small>
+              <p className="font-bold text-2xl">Pet Sellers</p>
+            </div>
+            <Button text="View all our sellers" icon={<BsChevronRight className="w-[15px] h-[15px]" />} type="iconLeft" color="outlined" />
+          </div>
+
+          {/* Seller Marquee */}
+          <Marquee speed={50} autoFill>
+            <div className="mx-10"><Image className="h-12" src="/imgs/marquee1.png" alt="seller1" /></div>
+            <div className="mx-10"><Image className="h-12" src="/imgs/marquee2.png" alt="seller2" /></div>
+            <div className="mx-10"><Image className="h-12" src="/imgs/marquee3.png" alt="seller3" /></div>
+            <div className="mx-10"><Image className="h-12" src="/imgs/marquee4.png" alt="seller4" /></div>
+            <div className="mx-10"><Image className="h-12" src="/imgs/marquee5.png" alt="seller5" /></div>
+            <div className="mx-10"><Image className="h-12" src="/imgs/marquee6.png" alt="seller6" /></div>
+            <div className="mx-10"><Image className="h-12" src="/imgs/marquee7.png" alt="seller7" /></div>
+          </Marquee>
+
+          <Banner bannerImage="/imgs/homeBanner2.png" title="Adoption" subtitle="We need help. so do they." description="Adopt a pet and give it a home,it will be love you back unconditionally." button1="View Into" button2="Explore Now" colour1="#FFB775" colour2="#FCEED5" colour3="#FFE7BA" isImageLeft={false} />
+        </div>
+
+      </div >
 
       <Footer />
     </>
