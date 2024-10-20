@@ -55,8 +55,8 @@ export default function Home() {
       <Navbar />
 
       {/* hero section */}
-      <section className="bg-secondary bg-opacity-50 lg:max-h-[695px] lg:h-screen lg:flex items-center justify-center overflow-clip">
-        <div className=" p-10 sm:p-20">
+      <section className="bg-secondary/50 lg:max-h-[695px] lg:h-screen lg:flex items-center justify-center lg:justify-end overflow-clip relative">
+        <div className="p-10 sm:p-20 lg:absolute lg:left-0 xl:translate-x-44">
           <p className="leading-[60px] capitalize text-primary font-Gilroy-Bold text-[60px]">One more friend
             <br />
             <span className="capitalize text-primary font-Gilroy-Bold text-[46px]">Thousend more fun!</span>
@@ -68,9 +68,9 @@ export default function Home() {
           </div>
         </div>
         {/* image */}
-        <div className="relative h-80">
-          <img className="absolute z-10 bottom-0" src="/imgs/womanHoldsADog.png" alt="" />
-          <img className="absolute -bottom-44" src="/imgs/shapes/headershape2.svg" alt="" />
+        <div className="relative flex items-end justify-center h-80 lg:h-full lg:w-2/3 xl:w-1/2">
+          <img className="object-contain absolute top-1/2 -translate-y-1/4 lg:translate-y-0" src="/imgs/shapes/headershape2.svg" alt="" />
+          <img className="object-contain -z-0 ml-0 sm:ml-80 lg:ml-20 lg:mt-5" src="/imgs/womanHoldsADog.png" alt="" />
         </div>
       </section>
 
