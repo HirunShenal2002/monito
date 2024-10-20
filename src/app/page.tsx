@@ -94,7 +94,7 @@ export default function Home() {
           </div>
         </div>
 
-        <Banner bannerImage="/imgs/homeBanner1.png" title="One more friend" subtitle="Thousands more fun!" description="Having a pet means you have more joy, a new friend, a happy person who will always be with you to have fun. We have 200+ different pets that can meet your needs!" button1="View Into" button2="Explore Now" colour1="#003459" colour2="#FCEED5" colour3="#002A48" isImageLeft={true} />
+        <Banner bannerImage="/imgs/homeBanner1.png" title="One More Friend" subtitle="Thousands More Fun!" description="Having a pet means you have more joy, a new friend, a happy person who will always be with you to have fun. We have 200+ different pets that can meet your needs!" button1="View Into" button2="Explore Now" colour1="#003459" colour2="#FCEED5" colour3="#002A48" isImageLeft={true} />
 
         {/* product section */}
         <div className="my-10">
@@ -135,7 +135,7 @@ export default function Home() {
             <div className="mx-10"><Image className="h-12" src="/imgs/marquee7.png" alt="seller7" /></div>
           </Marquee>
 
-          <Banner bannerImage="/imgs/homeBanner2.png" title="Adoption" subtitle="We need help. so do they." description="Adopt a pet and give it a home,it will be love you back unconditionally." button1="View Into" button2="Explore Now" colour1="#FFB775" colour2="#FCEED5" colour3="#FFE7BA" isImageLeft={false} />
+          <Banner bannerImage="/imgs/homeBanner2.png" title="Adoption" subtitle="We Need Help.So Do They." description="Adopt a pet and give it a home,it will be love you back unconditionally." button1="View Into" button2="Explore Now" colour1="#FFB775" colour2="#FCEED5" colour3="#FFE7BA" isImageLeft={false} />
         </div>
 
         <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
@@ -199,7 +199,7 @@ function Banner({
       <Image className="w-full h-full object-cover z-10" src={bannerImage} alt={title} />
 
       <div className={`w-full lg:w-1/2 flex flex-col justify-center gap-y-5 text-primary z-10 max-w-[400px] p-5 ${isImageLeft ? "text-right" : ""}`}>
-        <h3 className="text-5xl font-bold">{title}</h3>
+        <h3 className="text-4xl font-bold">{title}</h3>
         <p className="text-3xl font-semibold">{subtitle}</p>
         <p>{description}</p>
 
