@@ -1,11 +1,12 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { Dialog, DialogBackdrop, DialogPanel, DialogTitle, TransitionChild } from '@headlessui/react'
-import { BsFilter, BsFunnel, BsXLg } from "react-icons/bs";
+import { BsFilter, BsFunnel, BsPlayCircle, BsXLg } from "react-icons/bs";
 import { Autocomplete, AutocompleteItem, Button, Checkbox, Divider, Input, Pagination } from "@nextui-org/react";
 import ProductCard from "@/components/productCard";
 import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
+import Image from "next/image";
 
 const Page = () => {
 
@@ -31,7 +32,7 @@ const Page = () => {
 
     return (
         <>
-            <Navbar/>
+            <Navbar />
 
             {/* Slider for small screens */}
             <Dialog open={sideDrawer} onClose={setSideDrawer} className="relative z-10 lg:hidden">
@@ -77,9 +78,28 @@ const Page = () => {
 
             <div className="w-full max-w-[1200px] px-10 lg:px-0 mx-auto">
                 {/* Header Banner */}
-                <div className="w-full h-[378px]">
+
+                <div className={`w-full relative flex justify-between flex-col-reverse rounded-2xl overflow-clip px-2 md:px-20 lg:flex-row lg:items-end md:pt-52 lg:pt-28 my-10`} style={{ backgroundColor: "#FFE7BA" }}>
+
+                    <div className={`w-[1200px] lg:w-[782.29px] h-[800px] absolute -top-16 md:top-16 lg:top-0 -right-10 -translate-y-2/3 lg:-translate-y-1/4 rounded-[99px] rotate-[50deg] z-10 hidden lg:block`} style={{ backgroundColor: "#002A48" }}></div>
+                    <div className={`w-[1000px] lg:w-[782.29px] h-[1000px] lg:h-[635px] absolute top-20 lg:left-0 translate-y-1/3 -translate-x-1/4 lg:-translate-x-1/4 lg:translate-y-1/4 z-0 rounded-[99px] rotate-[45deg] lg:hidden`} style={{ backgroundColor: "#F7DBA7" }}></div>
+
+                    <Image className="w-full h-full object-contain z-10 max-w-[600px]" src="/imgs/listingHeading.png" alt="Listing Heading" width={1200} height={378} />
+
+                    <div className={`w-full h-full text-center md:w-2/3 flex flex-col justify-center gap-y-2 md:gap-y-5 text-primary lg:text-white z-10 lg:max-w-[400px] px-2 pt-5 md:p-5 mt-5 md:mt-0 lg:text-right md:absolute md:-top-20 lg:top-0 lg:mt-0 md:right-0 md:-translate-x-1/4`}>
+                        <h3 className="text-3xl md:text-5xl font-bold ">One more friend</h3>
+                        <p className="text-xl lg:text-3xl font-semibold">Thousands more fun!</p>
+                        <p className="text-sm lg:text-medium">Having a pet means you have more joy, a new friend, a happy person who will always be with you to have fun. We have 200+ different pets that can meet your needs!</p>
+
+                        <div className={`w-full flex items-center justify-center gap-x-5 mt-5 lg:mt-0 lg:justify-end`}>
+                            <Button endContent={<BsPlayCircle />} radius="full" variant="bordered" className="w-fit text-primary border-primary lg:text-white lg:border-white">View Intro</Button>
+                            <Button radius="full" className="w-fit bg-primary text-white lg:bg-white lg:text-primary">Explore Now</Button>
+                        </div>
+
+                    </div>
 
                 </div>
+
 
                 <div className="w-full flex">
 
@@ -100,7 +120,7 @@ const Page = () => {
                             </div>
 
                             <div className="flex justify-end">
-                            <Button onClick={() => setSideDrawer(true)} className="lg:hidden w-fit" endContent={<BsFunnel/>} radius="full" variant="light">Filter</Button>
+                                <Button onClick={() => setSideDrawer(true)} className="lg:hidden w-fit" endContent={<BsFunnel />} radius="full" variant="light">Filter</Button>
                             </div>
 
                             <Autocomplete
