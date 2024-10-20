@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { Dialog, DialogBackdrop, DialogPanel, DialogTitle, TransitionChild } from '@headlessui/react'
-import { BsFilter, BsFunnel, BsPlayCircle, BsXLg } from "react-icons/bs";
+import { BsFunnel, BsPlayCircle, BsXLg } from "react-icons/bs";
 import { Autocomplete, AutocompleteItem, Button, Checkbox, Divider, Input, Pagination } from "@nextui-org/react";
 import ProductCard from "@/components/productCard";
 import Footer from "@/components/footer";
@@ -76,7 +76,7 @@ const Page = () => {
             </Dialog>
 
 
-            <div className="w-full max-w-[1200px] px-10 lg:px-0 mx-auto">
+            <div className="w-full max-w-[1200px] px-10 lg:px-0 mx-auto pt-10">
                 {/* Header Banner */}
 
                 <div className={`w-full relative flex justify-between flex-col-reverse rounded-2xl overflow-clip px-2 md:px-20 lg:flex-row lg:items-end md:pt-52 lg:pt-28 my-10`} style={{ backgroundColor: "#FFE7BA" }}>

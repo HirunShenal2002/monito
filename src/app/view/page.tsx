@@ -80,10 +80,13 @@ const Page = () => {
     };
     return (
         <>
-            <Navbar />
+            <div className='hidden lg:block '>
+                <Navbar />
+            </div>
+
 
             {/* Header section */}
-            <div className="w-full flex flex-col lg:flex-row gap-5 gap-x-10 mt-20 lg:border-gray-100 lg:border py-5 lg:p-5 lg:rounded-2xl lg:max-w-[1200px] mx-auto">
+            <div className="w-full lg:pt-10 flex flex-col lg:flex-row gap-5 gap-x-10 lg:mt-20 lg:border-gray-100 lg:border lg:py-5 pb-5 lg:p-5 lg:rounded-2xl lg:max-w-[1200px] mx-auto">
                 {/* Left side Image Carousel */}
                 <div className="w-full lg:w-1/2">
                     <CarouselProvider
