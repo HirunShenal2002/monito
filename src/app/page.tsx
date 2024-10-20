@@ -183,12 +183,12 @@ function Banner({
   isImageLeft: boolean
 }) {
   return (
-    <div className={`w-full lg:h-[380px] relative flex justify-between flex-col-reverse rounded-2xl overflow-clip px-20 ${isImageLeft ? "lg:flex-row" : "lg:flex-row-reverse"}`} style={{ backgroundColor: colour1 }}>
+    <div className={`w-full lg:h-[380px] relative flex justify-between flex-col-reverse rounded-2xl overflow-clip px-2 md:px-20 ${isImageLeft ? "lg:flex-row" : "lg:flex-row-reverse"}`} style={{ backgroundColor: colour1 }}>
 
       {isImageLeft ? (
         <>
-          <div className={`w-[782.29px] h-[635px] absolute top-0 right-0 translate-x-1/4 -translate-y-1/4 z-0 rounded-[99px] rotate-[35deg]`} style={{ backgroundColor: colour2 }}></div>
-          <div className={`w-[782.29px] h-[635px] absolute top-0 left-0 -translate-x-1/4 translate-y-1/4 z-0 rounded-[99px] rotate-[30deg]`} style={{ backgroundColor: colour3 }}></div>
+          <div className={`w-[1200px] lg:w-[782.29px] h-[800px] lg:h-[635px] absolute -top-16 md:top-16 lg:top-0 right-0 -translate-y-2/3 translate-x-40 lg:translate-x-1/4 lg:-translate-y-1/4 rounded-[99px] rotate-[20deg] lg:rotate-[35deg] z-10`} style={{ backgroundColor: colour2 }}></div>
+          <div className={`w-[1000px] lg:w-[782.29px] h-[1000px] lg:h-[635px] absolute top-0 left-20 lg:left-0 translate-y-1/2 -translate-x-1/4 lg:-translate-x-1/4 lg:translate-y-1/4 z-0 rounded-[99px] rotate-[20deg] lg:rotate-[30deg]`} style={{ backgroundColor: colour3 }}></div>
         </>) : (
         <>
           <div className={`w-[782.29px] h-[635px] absolute top-0 left-0 -translate-x-1/3 -translate-y-1/3 z-0 rounded-[99px] rotate-[45deg]`} style={{ backgroundColor: colour2 }}></div>
@@ -198,12 +198,12 @@ function Banner({
 
       <Image className="w-full h-full object-cover z-10" src={bannerImage} alt={title} />
 
-      <div className={`w-full lg:w-1/2 flex flex-col justify-center gap-y-5 text-primary z-10 max-w-[400px] p-5 ${isImageLeft ? "text-right" : ""}`}>
-        <h3 className="text-5xl font-bold">{title}</h3>
-        <p className="text-3xl font-semibold">{subtitle}</p>
-        <p>{description}</p>
+      <div className={`w-full text-center lg:w-2/3 flex flex-col justify-center gap-y-2 lg:gap-y-5 text-primary z-10 xl:max-w-[400px] pt-5 lg:p-5 mt-5 lg:mt-0 ${isImageLeft ? "lg:text-right" : ""}`}>
+        <h3 className="text-3xl md:text-5xl font-bold ">{title}</h3>
+        <p className="text-xl lg:text-3xl font-semibold">{subtitle}</p>
+        <p className="text-sm lg:text-medium">{description}</p>
 
-        <div className={`w-full flex items-center gap-x-5 ${isImageLeft ? "justify-end" : ""}`}>
+        <div className={`w-full flex items-center justify-center gap-x-5 mt-5 lg:mt-0 ${isImageLeft ? "justify-end" : ""}`}>
           <Button text={button1} color="outlined" icon={<BsPlayCircle />} type="iconLeft" />
           <Button text={button2} color="primary1" />
         </div>
