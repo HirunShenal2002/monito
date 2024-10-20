@@ -55,8 +55,8 @@ export default function Home() {
       <Navbar />
 
       {/* hero section */}
-      <section className="bg-secondary bg-opacity-50 lg:max-h-[695px] lg:h-screen lg:flex items-center justify-center overflow-clip">
-        <div className=" p-10 sm:p-20">
+      <section className="bg-secondary/50 lg:max-h-[695px] lg:h-screen lg:flex items-center justify-center lg:justify-end overflow-clip relative">
+        <div className="p-10 sm:p-20 lg:absolute lg:left-0 xl:translate-x-44">
           <p className="leading-[60px] capitalize text-primary font-Gilroy-Bold text-[60px]">One more friend
             <br />
             <span className="capitalize text-primary font-Gilroy-Bold text-[46px]">Thousend more fun!</span>
@@ -68,13 +68,13 @@ export default function Home() {
           </div>
         </div>
         {/* image */}
-        <div className="relative h-80">
-          <img className="absolute z-10 bottom-0" src="/imgs/womanHoldsADog.png" alt="" />
-          <img className="absolute -bottom-44" src="/imgs/shapes/headershape2.svg" alt="" />
+        <div className="relative flex items-end justify-center h-80 lg:h-full lg:w-2/3 xl:w-1/2">
+          <img className="object-contain absolute top-1/2 -translate-y-1/4 lg:translate-y-0" src="/imgs/shapes/headershape2.svg" alt="" />
+          <img className="object-contain -z-0 ml-0 sm:ml-80 lg:ml-20 lg:mt-5" src="/imgs/womanHoldsADog.png" alt="" />
         </div>
       </section>
 
-      <div className="px-10 xl:p-0 max-w-[1200px] mx-auto">
+      <div className="px-5 xl:p-0 max-w-[1200px] mx-auto">
 
         {/* pet section */}
         <div className="my-10">
@@ -97,7 +97,7 @@ export default function Home() {
         <Banner bannerImage="/imgs/homeBanner1.png" title="One More Friend" subtitle="Thousands More Fun!" description="Having a pet means you have more joy, a new friend, a happy person who will always be with you to have fun. We have 200+ different pets that can meet your needs!" button1="View Into" button2="Explore Now" colour1="#003459" colour2="#FCEED5" colour3="#002A48" isImageLeft={true} />
 
         {/* product section */}
-        <div className="my-10">
+        <div className="my-10 hidden lg:block">
           <div className="flex flex-col gap-y-10">
             <div className="flex justify-between items-end">
               <div className="flex flex-col text-primary">
@@ -140,7 +140,7 @@ export default function Home() {
 
         <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
           {blogPosts.map((post, index) => (
-            <div key={index} className="flex flex-col gap-y-3 p-5">
+            <div key={index} className="flex flex-col gap-y-3 py-5 md:p-5">
               <Image className="w-full h-[250px] object-cover" width={1000} height={250} src={post.img} alt={post.title} />
               <Chip className="bg-[#00A7E7] text-white">
                 {post.tag}
@@ -183,12 +183,12 @@ function Banner({
   isImageLeft: boolean
 }) {
   return (
-    <div className={`w-full lg:h-[380px] relative flex justify-between flex-col-reverse rounded-2xl overflow-clip px-20 ${isImageLeft ? "lg:flex-row" : "lg:flex-row-reverse"}`} style={{ backgroundColor: colour1 }}>
+    <div className={`w-full lg:h-[380px] relative flex justify-between flex-col-reverse rounded-2xl overflow-clip px-2 md:px-20 ${isImageLeft ? "lg:flex-row" : "lg:flex-row-reverse"}`} style={{ backgroundColor: colour1 }}>
 
       {isImageLeft ? (
         <>
-          <div className={`w-[782.29px] h-[635px] absolute top-0 right-0 translate-x-1/4 -translate-y-1/4 z-0 rounded-[99px] rotate-[35deg]`} style={{ backgroundColor: colour2 }}></div>
-          <div className={`w-[782.29px] h-[635px] absolute top-0 left-0 -translate-x-1/4 translate-y-1/4 z-0 rounded-[99px] rotate-[30deg]`} style={{ backgroundColor: colour3 }}></div>
+          <div className={`w-[1200px] lg:w-[782.29px] h-[800px] lg:h-[635px] absolute -top-16 md:top-16 lg:top-0 right-0 -translate-y-2/3 translate-x-40 lg:translate-x-1/4 lg:-translate-y-1/4 rounded-[99px] rotate-[20deg] lg:rotate-[35deg] z-10`} style={{ backgroundColor: colour2 }}></div>
+          <div className={`w-[1000px] lg:w-[782.29px] h-[1000px] lg:h-[635px] absolute top-0 left-20 lg:left-0 translate-y-1/2 -translate-x-1/4 lg:-translate-x-1/4 lg:translate-y-1/4 z-0 rounded-[99px] rotate-[20deg] lg:rotate-[30deg]`} style={{ backgroundColor: colour3 }}></div>
         </>) : (
         <>
           <div className={`w-[782.29px] h-[635px] absolute top-0 left-0 -translate-x-1/3 -translate-y-1/3 z-0 rounded-[99px] rotate-[45deg]`} style={{ backgroundColor: colour2 }}></div>
@@ -198,12 +198,12 @@ function Banner({
 
       <Image className="w-full h-full object-cover z-10" src={bannerImage} alt={title} />
 
-      <div className={`w-full lg:w-1/2 flex flex-col justify-center gap-y-5 text-primary z-10 max-w-[400px] p-5 ${isImageLeft ? "text-right" : ""}`}>
-        <h3 className="text-4xl font-bold">{title}</h3>
-        <p className="text-3xl font-semibold">{subtitle}</p>
-        <p>{description}</p>
+      <div className={`w-full text-center lg:w-2/3 flex flex-col justify-center gap-y-2 lg:gap-y-5 text-primary z-10 xl:max-w-[400px] pt-5 lg:p-5 mt-5 lg:mt-0 ${isImageLeft ? "lg:text-right" : ""}`}>
+        <h3 className="text-3xl md:text-5xl font-bold ">{title}</h3>
+        <p className="text-xl lg:text-3xl font-semibold">{subtitle}</p>
+        <p className="text-sm lg:text-medium">{description}</p>
 
-        <div className={`w-full flex items-center gap-x-5 ${isImageLeft ? "justify-end" : ""}`}>
+        <div className={`w-full flex items-center justify-center gap-x-5 mt-5 lg:mt-0 ${isImageLeft ? "justify-end" : ""}`}>
           <Button text={button1} color="outlined" icon={<BsPlayCircle />} type="iconLeft" />
           <Button text={button2} color="primary1" />
         </div>

@@ -80,10 +80,10 @@ const Page = () => {
     };
     return (
         <>
-            <Navbar/>
+            <Navbar />
 
             {/* Header section */}
-            <div className="w-full flex flex-col lg:flex-row gap-5 gap-x-10 mt-20 border-y border-gray-100 md:border py-5 md:p-5 md:rounded-2xl md:max-w-[1200px] mx-auto">
+            <div className="w-full flex flex-col lg:flex-row gap-5 gap-x-10 mt-20 lg:border-gray-100 lg:border py-5 lg:p-5 lg:rounded-2xl lg:max-w-[1200px] mx-auto">
                 {/* Left side Image Carousel */}
                 <div className="w-full lg:w-1/2">
                     <CarouselProvider
@@ -114,20 +114,9 @@ const Page = () => {
                         </DotGroup>
                     </CarouselProvider>
 
-                    <div className="px-4 xl:p-0">
-                        <div className="w-full rounded-2xl bg-secondary bg-opacity-40 p-4 flex flex-col md:flex-row justify-between text-sm mt-6 gap-y-3 md:gap-y-0">
-                            <div className="flex gap-x-[9px]">
-                                <Image src="/icons/dogHeart.svg" alt="dog and cat" width={24} height={24} />
-                                <span className="text-primary font-semibold">100% health guarantee for pets</span>
-                            </div>
-                            <div className="flex gap-x-[9px]">
-                                <Image src="/icons/dogAndCat.svg" alt="dog and cat" width={24} height={24} />
-                                <span className="text-primary font-semibold">100% guarantee of pet identification</span>
-                            </div>
-                        </div>
-                    </div>
+                    <Guarantee className="hidden lg:block" />
 
-                    <div className="px-4 xl:p-0">
+                    <div className="px-4 xl:p-0 hidden lg:block">
                         <div className="w-full flex text-sm mt-6 text-primary gap-x-5">
                             <p className="flex gap-x-2 font-bold">
                                 <BsShare className="w-[18.77px] h-[18.77px]" /> Share:
@@ -149,7 +138,10 @@ const Page = () => {
                 </div>
 
                 {/* Right side Information */}
-                <div className="w-full lg:w-1/2 flex flex-col px-10 xl:p-0">
+                <div className="w-full lg:w-1/2 flex flex-col px-5 xl:p-0 shadow-[0px_-4px_4px_0px_rgba(0,0,0,0.05)] rounded-t-2xl lg:rounded-none lg:shadow-none relative">
+
+                    <div className="w-10 h-1.5 rounded-full top-1 mx-auto bg-neutral-400 my-4 lg:hidden"></div>
+
                     <Breadcrumbs>
                         <BreadcrumbItem>Home</BreadcrumbItem>
                         <BreadcrumbItem>Dog</BreadcrumbItem>
@@ -158,14 +150,21 @@ const Page = () => {
                     </Breadcrumbs>
 
                     <div className="w-full flex flex-col">
-                        <small className="text-gray-300 mt-4">SKU #1000078</small>
+                        <small className="text-gray-300 mt-4 hidden lg:block">SKU #1000078</small>
                         <h1 className="text-primary text-2xl font-bold">Shiba Inu Sepia</h1>
                         <p className="mt-3 font-bold">34.000.000 VND</p>
                     </div>
 
-                    <div className="w-full mt-10 flex gap-x-3">
+                    <div className="w-full mt-5 lg:mt-10 flex gap-x-3">
                         <Button type="default" text="Contact us" />
                         <Button type="iconRight" text="Chat with Monito" icon={<BsChat />} color="outlined" />
+                    </div>
+
+                    <div className="w-full justify-between flex items-center mt-10 lg:hidden">
+                        <h2 className="text-lg font-bold">Information</h2>
+                        <p className="flex gap-x-2 font-bold justify-center items-center">
+                            <BsShare className="w-[18.77px] h-[18.77px]" /> Share
+                        </p>
                     </div>
 
                     <Table hideHeader aria-label="Pet information" shadow="none" className="text-gray-400 -ms-5">
@@ -231,6 +230,8 @@ const Page = () => {
                         </TableBody>
                     </Table>
                 </div>
+
+                <Guarantee className="lg:hidden" />
             </div>
 
             <div className="px-10 xl:p-0">
@@ -265,7 +266,7 @@ const Page = () => {
                         </div>
                         <div className="w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                             {pets.slice(0, 4).map((pet, index) => (
-                                <ProductCard key={index} product={pet} isPetsCard={true}/>
+                                <ProductCard key={index} product={pet} isPetsCard={true} />
                             ))}
                         </div>
                     </div>
@@ -279,3 +280,20 @@ const Page = () => {
 }
 
 export default Page;
+
+function Guarantee({ className }: { className: string }) {
+    return (
+        <div className={`px-4 xl:p-0 ${className}`}>
+            <div className="w-full rounded-2xl bg-secondary bg-opacity-40 p-4 flex flex-col md:flex-row justify-between text-sm lg:mt-6 gap-y-3 md:gap-y-0">
+                <div className="flex gap-x-[9px]">
+                    <Image src="/icons/dogHeart.svg" alt="dog and cat" width={24} height={24} />
+                    <span className="text-primary font-semibold">100% health guarantee for pets</span>
+                </div>
+                <div className="flex gap-x-[9px]">
+                    <Image src="/icons/dogAndCat.svg" alt="dog and cat" width={24} height={24} />
+                    <span className="text-primary font-semibold">100% guarantee of pet identification</span>
+                </div>
+            </div>
+        </div>
+    )
+}

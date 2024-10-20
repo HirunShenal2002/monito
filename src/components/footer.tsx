@@ -5,21 +5,21 @@ const Footer = () => {
   return (
     <div className="bg-secondary bg-opacity-40 rounded-t-[40px] w-full py-10 px-4 mt-20">
 
-      <div className="bg-primary py-8 px-4 justify-center mb-5 mx-auto rounded-2xl lg:max-w-[1180px] gap-y-8 md:flex md:justify-between md:items-center sm:px-12">
+      <div className="bg-primary py-8 px-4 justify-center mb-5 mx-auto rounded-2xl lg:max-w-[1180px] gap-y-8 gap-x-3 md:flex md:justify-between md:items-center sm:px-12">
         <div className="lg:flex flex-col lg:w-[389px] lg:h-[72px] justify-start">
           <h2 className="text-2xl font-semibold md:mb-0 mb-6 lg:leading-normal text-white">Register Now So You Don't Miss Our Programs  </h2>
         </div>
 
-        <div className="items-center flex bg-white p-2 rounded-2xl gap-2 w-full lg:w-[700px] h-[72px] justify-between">
-          <input type="text" className="h-full max-w-[500px] w-full border-2 rounded-lg ps-6" placeholder="Enter your email" />
-          <button className="bg-primary text-white w-44 rounded-lg font-bold h-full">Subscribe Now</button>
+        <div className="items-center flex flex-col lg:flex-row bg-white p-2 rounded-2xl gap-2 w-full lg:w-[700px] min-h-[72px] justify-between">
+          <input type="text" className="h-full max-w-[500px] w-full border-2 rounded-lg ps-6 py-4" placeholder="Enter your email" />
+          <button className="bg-primary text-white w-full lg:w-44 rounded-lg font-bold h-full py-4">Subscribe Now</button>
         </div>
       </div>
 
 
       <div className="py-6">
-        <div className="lg:max-w-[1180px] w-full mx-auto flex flex-col md:flex-row items-center justify-between text-center ">
-          <nav className="space-x-[60px] font-Gilroy-Medium text-lg text-neutral-100 mb-4 md:mb-0">
+        <div className="lg:max-w-[1180px] w-full mx-auto flex flex-col md:flex-row items-center justify-between text-center">
+          <nav className="flex w-full lg:w-fit sm:gap-x-10 justify-between font-Gilroy-Medium text-neutral-100 mb-4 md:mb-0">
             <a href="#">Home</a>
             <a href="#">Category</a>
             <a href="#">About</a>
