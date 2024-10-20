@@ -158,7 +158,7 @@ const Page = () => {
                     </Breadcrumbs>
 
                     <div className="w-full flex flex-col">
-                        <small className="text-gray-300 mt-4">SKU #1000078</small>
+                        <small className="text-gray-300 mt-4 hidden lg:block">SKU #1000078</small>
                         <h1 className="text-primary text-2xl font-bold">Shiba Inu Sepia</h1>
                         <p className="mt-3 font-bold">34.000.000 VND</p>
                     </div>
