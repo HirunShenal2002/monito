@@ -74,7 +74,7 @@ export default function Home() {
         </div>
       </section>
 
-      <div className="px-10 xl:p-0 max-w-[1200px] mx-auto">
+      <div className="px-5 xl:p-0 max-w-[1200px] mx-auto">
 
         {/* pet section */}
         <div className="my-10">
@@ -97,7 +97,7 @@ export default function Home() {
         <Banner bannerImage="/imgs/homeBanner1.png" title="One more friend" subtitle="Thousands more fun!" description="Having a pet means you have more joy, a new friend, a happy person who will always be with you to have fun. We have 200+ different pets that can meet your needs!" button1="View Into" button2="Explore Now" colour1="#003459" colour2="#FCEED5" colour3="#002A48" isImageLeft={true} />
 
         {/* product section */}
-        <div className="my-10">
+        <div className="my-10 hidden lg:block">
           <div className="flex flex-col gap-y-10">
             <div className="flex justify-between items-end">
               <div className="flex flex-col text-primary">
@@ -140,7 +140,7 @@ export default function Home() {
 
         <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
           {blogPosts.map((post, index) => (
-            <div key={index} className="flex flex-col gap-y-3 p-5">
+            <div key={index} className="flex flex-col gap-y-3 py-5 md:p-5">
               <Image className="w-full h-[250px] object-cover" width={1000} height={250} src={post.img} alt={post.title} />
               <Chip className="bg-[#00A7E7] text-white">
                 {post.tag}

@@ -19,7 +19,7 @@ const Footer = () => {
 
       <div className="py-6">
         <div className="lg:max-w-[1180px] w-full mx-auto flex flex-col md:flex-row items-center justify-between text-center">
-          <nav className="flex w-full lg:w-fit gap-x-10 justify-between font-Gilroy-Medium text-neutral-100 mb-4 md:mb-0">
+          <nav className="flex w-full lg:w-fit sm:gap-x-10 justify-between font-Gilroy-Medium text-neutral-100 mb-4 md:mb-0">
             <a href="#">Home</a>
             <a href="#">Category</a>
             <a href="#">About</a>
