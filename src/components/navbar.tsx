@@ -52,7 +52,7 @@ const Navbar = () => {
                     <div className="flex text-center justify-center">
                         <div className=" inline-block rounded-lg p-3">
                             <h1 className="text-2xl font-bold text-blue-900">Monitö</h1>
-                            <p className="text-sm">Pets for Best</p>
+                            <p className="text-sm text-nowrap">Pets for Best</p>
                         </div>
                     </div>
 
