@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { Dropdown, DropdownTrigger, DropdownMenu, DropdownItem, Button } from "@nextui-org/react";
+import { Dropdown, DropdownTrigger, DropdownMenu, DropdownItem, Button, Input } from "@nextui-org/react";
 import { BsChevronDown, BsSearch } from "react-icons/bs";
 import { usePathname } from 'next/navigation';
 
@@ -30,8 +30,8 @@ const Navbar = () => {
     return (
         <nav className="bg-[#FAEACB] relative w-full">
             <div className="max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="flex justify-between items-center h-16 md:justify-start">
-                    
+                <div className="grid grid-cols-3 md:flex justify-between items-center h-16 gap-x-2">
+
                     {/* Hamburger Menu (for mobile) */}
                     <div className="flex items-center md:hidden">
                         <button
@@ -49,7 +49,7 @@ const Navbar = () => {
                     </div>
 
                     {/* Logo - Centered for mobile */}
-                    <div className="flex-grow text-center">
+                    <div className="flex text-center">
                         <div className=" inline-block rounded-lg p-3">
                             <h1 className="text-2xl font-bold text-blue-900">Monitö</h1>
                             <p className="text-sm">Pets for Best</p>
@@ -57,7 +57,7 @@ const Navbar = () => {
                     </div>
 
                     {/* Search Icon (for mobile) */}
-                    <div className="flex items-center md:hidden">
+                    <div className="flex items-center justify-end w-full md:hidden">
                         <BsSearch className="text-gray-800 w-6 h-6" />
                     </div>
 
@@ -67,44 +67,47 @@ const Navbar = () => {
                             <Link
                                 key={index}
                                 href={link.path}
-                                className={`${link.path === pathname ? 'font-Gilroy-Medium text-primary' : ''} capitalize text-lg font-Gilroy-Medium text-gray-800 hover:text-gray-600`}
+                                className={`${link.path === pathname ? 'capitalize text-lg font-Gilroy-Bold text-gray-800 hover:text-gray-600' : ''} capitalize text-lg font-Gilroy-Bold text-gray-800 hover:text-gray-600`}
                             >
                                 {link.label}
                             </Link>
                         ))}
                     </div>
 
-                    {/* Search Bar */}
-                    <div className="hidden md:flex items-center space-x-3">
-                        <div className="relative">
-                            <input
-                                type="text"
+                    <div className='flex gap-x-4'>
+                        {/* Search Bar */}
+                        <div className="hidden md:flex items-center space-x-3">
+                            <Input
+                                startContent={<BsSearch className="text-gray-800 w-6 h-6" />}
                                 placeholder="Search something here!"
-                                className="rounded-full px-4 py-2 border border-gray-300"
+                                className="max-w-[280px]"
+                                radius='full'
                             />
-                            <BsSearch className="absolute top-2 right-3 text-gray-800 w-5 h-5" />
                         </div>
-                    </div>
 
-                    {/* Join Button and Currency Dropdown */}
-                    <div className="hidden md:flex items-center space-x-6">
-                        <Button
-                            className="bg-blue-900 text-white rounded-full px-6 py-2 font-Gilroy-Bold"
-                        >
-                            Join the community
-                        </Button>
-                        <Dropdown>
+                        {/* Join Button and Currency Dropdown */}
+                        <div className="hidden md:flex items-center space-x-6">
+                            <Button
+                                className="bg-blue-900 text-white rounded-full px-6 py-2 font-Gilroy-Bold"
+                            >
+                                Join the community
+                            </Button>
+                            <Dropdown>
                             <DropdownTrigger>
-                                <Button light className="flex items-center gap-1">
-                                    VND <BsChevronDown className="w-4 h-4" />
+                                <Button
+                                    variant="bordered"
+                                    className='text-primary font-bold'
+                                >
+                                    <img src='/icons/vietnam.png' className=''/>
+                                    VND
+                                    <BsChevronDown className="w-[15px] h-[15px] text-primary font-bold" />
                                 </Button>
                             </DropdownTrigger>
-                            <DropdownMenu>
-                                <DropdownItem key="usd">USD</DropdownItem>
-                                <DropdownItem key="eur">EUR</DropdownItem>
-                                <DropdownItem key="vnd">VND</DropdownItem>
+                            <DropdownMenu aria-label="Static Actions">
+                                <DropdownItem key="new">ENG</DropdownItem>
                             </DropdownMenu>
                         </Dropdown>
+                        </div>
                     </div>
                 </div>
             </div>
