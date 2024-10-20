@@ -125,7 +125,7 @@ const Page = () => {
 
                             <Autocomplete
                                 defaultItems={sortBy}
-                                className="max-w-[200px]"
+                                className="max-w-[200px] border-1 rounded-full p-1"
                                 placeholder="Sort by"
                                 radius="full"
                                 variant="bordered"
@@ -149,8 +149,8 @@ const Page = () => {
                         </div>
 
                         {/* Pagination */}
-                        <div className="w-full flex justify-center mt-10">
-                            <Pagination showControls total={10} initialPage={1} />
+                        <div className="w-full flex justify-center mt-10 text-primary">
+                            <Pagination showControls total={10} initialPage={1} className='text-primary'/>
                         </div>
 
                     </div>
